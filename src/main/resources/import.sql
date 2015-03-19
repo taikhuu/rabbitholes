@@ -1,0 +1,10 @@
+INSERT INTO user_accounts VALUES(1,CURRENT_TIMESTAMP,
+CURRENT_TIMESTAMP,
+1,
+'instcode@yahoo.com',
+'Khoa',
+'Nguyen',
+'4a708a48012a210622eeeca47fd9e2a8896389a6b2c23eb45f54d6920010f2c3b274ed94a0e4d840',
+'ROLE_USER');
+
+

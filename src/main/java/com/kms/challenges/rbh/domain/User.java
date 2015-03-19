@@ -4,6 +4,7 @@ import com.kms.challenges.rbh.model.Role;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author Petri Kainulainen
@@ -31,6 +32,9 @@ public class User extends BaseEntity<Long> {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", length = 20, nullable = false)
     private Role role;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
+    private List<Comment> comment;
 
     public User() {
 
@@ -110,5 +114,37 @@ public class User extends BaseEntity<Long> {
         public User build() {
             return user;
         }
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<Comment> getComment() {
+        return comment;
+    }
+
+    public void setComment(List<Comment> comment) {
+        this.comment = comment;
     }
 }

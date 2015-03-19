@@ -16,6 +16,6 @@ public class HomeController {
     @RequestMapping(value="/", method = RequestMethod.GET)
     public String showHomePage() {
         LOGGER.debug("Rendering homepage.");
-        return VIEW_NAME_HOMEPAGE;
+        return "redirect:guestbook";
     }
 }
